@@ -1,0 +1,7 @@
+#uname playbook 
+---
+  - hosts: all
+    tasks: 
+      - name: get the OS of each host 
+        shell: uname
+        
