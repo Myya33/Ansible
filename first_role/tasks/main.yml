@@ -1,0 +1,11 @@
+---
+# tasks file for first_role
+- name: add index file 
+  file: 
+    path: /home/ec2-user/test.txt
+    state: touch
+
+- name: add line in file
+  lineinfile:
+    path: /home/ec2-user/test.txt
+    line: <h1> Hello World! </h1>

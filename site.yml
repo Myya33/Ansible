@@ -1,0 +1,24 @@
+--- 
+- name: my first playbook  
+  hosts: myya
+  gather_facts: true  
+  become: yes
+  vars_files:  
+    - "vars.yml"  
+ 
+  roles:
+    - first_role
+    - second_role
+  
+  
+  tasks:
+
+  - name: install apache
+    yum: 
+      name: httpd
+      state: latest 
+  
+  - name: start apache
+    ansible.builtin.service:
+      name: httpd
+      state: started
